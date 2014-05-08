@@ -3,7 +3,12 @@
 #
 
 	die "Use this program to take the qiime split_libraries_fastq.py fasta and make a matrix
-trans and cutoff are required, comboreps file is optional
+-trans and cutoff are required, comboreps file is optional
+
+-trans is generated from fasta2unique_table4.pl
+-cutoff is the number of times a sequence must be present in the dataset to be kept
+-comboreps is a tab file with two colums, the first the actual library name in the .trans file and the second the merged library name. This allows replicates to be merged at a later point in the data than the initial naming process.
+
 Usage: trans cutoff comboreps > Redirect\n" unless (@ARGV);
 	($file1, $cutoff, $combofile) = (@ARGV);
 	die "Please follow command line args\n" unless ($file1);
